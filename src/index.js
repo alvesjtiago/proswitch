@@ -3,20 +3,12 @@ const exec = require('child_process').exec
 const path = require('path')
 var fs = require('fs')
 
-var appIcon = null
-
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
-  // eslint-disable-line global-require
-  app.quit()
-}
-
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function() {
   // Menu bar icon
-  appIcon = new Tray(path.join(__dirname, '../assets/images/icon.png'))
+  const appIcon = new Tray(path.join(__dirname, '../assets/images/icon.png'))
 
   fs.readFile(
     path.join(
