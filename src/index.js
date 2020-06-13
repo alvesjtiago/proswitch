@@ -30,12 +30,14 @@ app.on('ready', function () {
           const openCommand = `open -na "Google Chrome" --args --profile-directory="${profileName}"`
 
           const indexNumber = index + 1
-          globalShortcut.register('Alt+Shift+' + indexNumber, () => {
+          globalShortcut.register('Command+Option+' + indexNumber, () => {
             exec(openCommand)
           })
 
           return {
             label: displayName,
+            accelerator: 'Command+Option+' + indexNumber,
+            acceleratorWorksWhenHidden: true,
             type: 'normal',
             click: () => {
               exec(openCommand)
