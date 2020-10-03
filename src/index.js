@@ -1,7 +1,16 @@
 const { app, Menu, Tray, globalShortcut } = require('electron')
+const AutoLaunch = require('auto-launch')
 const exec = require('child_process').exec
 const path = require('path')
 var fs = require('fs')
+
+// Auto launch application on startup
+let autoLaunch = new AutoLaunch({
+  name: 'Proswitch',
+})
+autoLaunch.isEnabled().then((isEnabled) => {
+  if (!isEnabled) autoLaunch.enable()
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
