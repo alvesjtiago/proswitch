@@ -7,6 +7,7 @@ var fs = require('fs')
 // Auto launch application on startup
 let autoLaunch = new AutoLaunch({
   name: 'Proswitch',
+  isHidden: true
 })
 autoLaunch.isEnabled().then((isEnabled) => {
   if (!isEnabled) autoLaunch.enable()
