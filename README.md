@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/407470/112758785-fd9bde00-8fe7-11eb-941f-77fe0f166d17.png" alt="Proswitch logo" width="200"/>
+<img src="https://user-images.githubusercontent.com/407470/112759022-1953b400-8fe9-11eb-823b-bf14ecc15bd8.png" alt="Proswitch command" width="200"/>
 
 # Proswitch
 
