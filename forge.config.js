@@ -1,6 +1,3 @@
-const path = require('path')
-const fs = require('fs')
-
 const config = {
   packagerConfig: {
     icon: './assets/images/icon.icns',
@@ -39,5 +36,4 @@ const config = {
   ],
 }
 
-// Finally, export it
 module.exports = config
