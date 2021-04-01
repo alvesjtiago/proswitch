@@ -13,6 +13,9 @@ autoLaunch.isEnabled().then((isEnabled) => {
   if (!isEnabled) autoLaunch.enable()
 })
 
+// Auto-updater
+require('update-electron-app')()
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
