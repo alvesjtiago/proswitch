@@ -4,9 +4,6 @@ const exec = require('child_process').exec
 const path = require('path')
 var fs = require('fs')
 
-// Auto-updater
-require('update-electron-app')()
-
 // Auto launch application on startup
 let autoLaunch = new AutoLaunch({
   name: 'Proswitch',
