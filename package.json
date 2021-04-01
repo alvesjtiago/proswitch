@@ -1,7 +1,7 @@
 {
   "name": "proswitch",
   "productName": "Proswitch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Seamlessly switch between Chrome profiles",
   "main": "src/index.js",
   "scripts": {
