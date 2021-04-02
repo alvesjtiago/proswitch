@@ -21,7 +21,9 @@ require('update-electron-app')()
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
   // Menu bar icon
-  const appIcon = new Tray(path.join(__dirname, '../assets/images/icon.png'))
+  const appIcon = new Tray(
+    path.join(__dirname, '../assets/images/iconTemplate.png')
+  )
 
   fs.readFile(
     path.join(
