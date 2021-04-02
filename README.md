@@ -4,6 +4,8 @@
 
 A status bar Mac application to seamlessly switch between Chrome profiles.
 
+[Download latest version](https://github.com/alvesjtiago/proswitch/releases/download/v1.0.1/Proswitch.zip).
+
 ### How to run locally
 
 Clone the repo and run
