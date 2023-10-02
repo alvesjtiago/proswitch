@@ -14,3 +14,9 @@ Clone the repo and run
 yarn install
 yarn start
 ```
+
+### How to package it
+
+```
+yarn make
+```

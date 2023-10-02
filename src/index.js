@@ -2,7 +2,7 @@ const { app, Menu, Tray, globalShortcut } = require('electron')
 const AutoLaunch = require('auto-launch')
 const exec = require('child_process').exec
 const path = require('path')
-var fs = require('fs')
+const fs = require('fs')
 
 // Auto launch application on startup
 let autoLaunch = new AutoLaunch({
@@ -22,13 +22,13 @@ require('update-electron-app')()
 app.on('ready', function () {
   // Menu bar icon
   const appIcon = new Tray(
-    path.join(__dirname, '../assets/images/iconTemplate.png')
+    path.join(__dirname, '../assets/images/iconTemplate.png'),
   )
 
   fs.readFile(
     path.join(
       app.getPath('home'),
-      `/Library/Application\ Support/Google/Chrome/Local\ State`
+      `/Library/Application\ Support/Google/Chrome/Local\ State`,
     ),
     'utf8',
     function (err, data) {
@@ -40,14 +40,16 @@ app.on('ready', function () {
         const profiles = Object.keys(localState.profile.info_cache)
 
         menuItems = profiles.map((profileName, index) => {
-          displayName = localState.profile.info_cache[profileName].name
+          const displayName = localState.profile.info_cache[profileName].name
 
           const openCommand = `open -na "Google Chrome" --args --profile-directory="${profileName}"`
 
           const indexNumber = index + 1
-          globalShortcut.register('Command+Option+' + indexNumber, () => {
-            exec(openCommand)
-          })
+          if (indexNumber < 10) {
+            globalShortcut.register('Command+Option+' + indexNumber, () => {
+              exec(openCommand)
+            })
+          }
 
           return {
             label: displayName,
@@ -72,7 +74,7 @@ app.on('ready', function () {
       const contextMenu = Menu.buildFromTemplate(menuItems)
       appIcon.setToolTip('Proswitch')
       appIcon.setContextMenu(contextMenu)
-    }
+    },
   )
 
   // Hide dock menu
